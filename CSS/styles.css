@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+html{
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+}
+
+body{
+    background-color: hsl(217, 54%, 11%);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.fade{
+    width: 100%;
+    position: relative
+}
+
+.image{
+    width: 100%;
+    border-radius: 25px;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.super{
+    transition: .5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsl(178, 100%, 50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+}
+
+
+.fade:hover .super{
+    opacity: 0.8;
+}
+
+
+
+.grid{
+    display: grid;
+    grid-template-columns: 30% 30%;
+    justify-content: space-between;
+}
+
+main{
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 25px;
+    box-shadow: 20px 20px 20px 20px #0C1729;
+}
+
+p, .clock{
+    color: hsl(215, 51%, 70%);
+    font-weight: 400;
+}
+
+.eth{
+    color: hsl(178, 100%, 50%);
+}
+
+.eth img, .clock img{
+    padding: 0 10px;
+}
+
+h1:hover, p span:hover{
+    color: hsl(178, 100%, 50%);
+}
+
+h1{
+    color: white;
+}
+
+.creation{
+    border-top: 1px solid white;
+    margin-top: 10%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.creation img{
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 10%;
+}
+
+.creation p{
+    display: inline-block;
+    font-weight: 500;
+}
+
+.creation span{
+    color: white;
+}
+
+
+
+
+footer{
+    clear: both;
+    position: fixed;
+    bottom: 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    padding: 15px;
+    width: 100%;
+    }
+
+    html{
+        font-size: 13px;
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: 40% 40%;
+        justify-content: space-between;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
